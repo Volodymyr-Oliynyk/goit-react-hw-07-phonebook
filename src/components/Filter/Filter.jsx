@@ -1,8 +1,8 @@
 import React from 'react';
-// import propTypes from 'prop-types';
 import { Input } from 'components/common/InputStyled';
 import { FilterLabel } from './FilterStyled';
-import { filterContacts, getFilterValue } from '../../redux/contacts';
+import { filterContacts } from '../../redux/contacts/contactsActions';
+import {getFilterValue} from '../../redux/contacts/contactSelectors'
 import { useSelector, useDispatch } from 'react-redux';
 
 const Filter = () => {
@@ -28,7 +28,4 @@ const Filter = () => {
 
 export default Filter;
 
-// Filter.propTypes = {
-//   value: propTypes.string.isRequired,
-//   onChange: propTypes.func.isRequired,
-// };
+

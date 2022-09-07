@@ -1,13 +1,22 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteContact, getContactValue, getFilterValue } from 'redux/contacts';
 import { Button } from 'components/common/ButtonStyled';
 import { ContactItem, List } from './ContactListstyled';
+import {getAllContacts,
+  deleteCurrentContact} from '../../redux/contacts/contactsOperations'
+import {
+  getContactValue,
+  getFilterValue,
+} from '../../redux/contacts/contactSelectors';
 
 const ContactList = () => {
   const contacts = useSelector(getContactValue);
   const filter = useSelector(getFilterValue);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllContacts());
+  }, [dispatch]);
 
   const visibleContacts = () => {
     const normalizedContacts = filter.toLowerCase();
@@ -19,8 +28,10 @@ const ContactList = () => {
   const filteredContacts = visibleContacts();
 
   const deleteContactItem = contactId => {
-    dispatch(deleteContact(contactId));
+    dispatch(deleteCurrentContact(contactId));
   };
+
+
 
   return (
     <List>

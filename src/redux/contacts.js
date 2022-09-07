@@ -1,4 +1,9 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, 
+  // createAsyncThunk
+ } from '@reduxjs/toolkit';
+// import {getContacts,
+//   postContact,
+//   fetchDeleteContact} from '../api/contactsApi.js'
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 

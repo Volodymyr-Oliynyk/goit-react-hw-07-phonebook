@@ -9,7 +9,8 @@ import {
   ContactField,
 } from './ContactFormStyled';
 import { useSelector, useDispatch } from 'react-redux';
-import { getContactValue, addContact } from '../../redux/contacts';
+import { getContactValue } from '../../redux/contacts/contactSelectors';
+import { addNewContacts } from '../../redux/contacts/contactsOperations';
 import { nanoid } from 'nanoid';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
@@ -42,7 +43,7 @@ export default function ContactForm() {
     };
     contacts.find(contact => contact.name === newContact.name)
       ? Notify.info(`${name} is already in contacts`)
-      : dispatch(addContact(newContact));
+      : dispatch(addNewContacts(newContact));
 
     resetForm();
   };

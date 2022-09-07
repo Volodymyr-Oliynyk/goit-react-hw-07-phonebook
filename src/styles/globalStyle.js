@@ -1,5 +1,6 @@
-@import-normalize; /* bring in normalize.css styles */
+import { createGlobalStyle } from 'styled-components';
 
+export const GlobalStyle = createGlobalStyle`
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -18,7 +19,7 @@ code {
 display: flex;
 }
 input {
-   border-radius: 4px;
+  border-radius: 4px;
   background-color: #fafafa;
   color: #333;
   font-size: 1.2em;
@@ -26,5 +27,4 @@ input {
   margin: 0.5em;
   width: 120px;
   height: 7px;
-}
-
+}`;
