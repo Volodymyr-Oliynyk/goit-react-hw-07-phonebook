@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Button } from 'components/common/ButtonStyled';
-import { ContactItem, List } from './ContactListstyled';
+import { ContactItem, List } from './ContactListStyled';
 import {getAllContacts,
-  deleteCurrentContact} from '../../redux/contacts/contactsOperations'
+  deleteCurrentContact} from 'redux/contacts/contactsOperations'
 import {
   getContactValue,
   getFilterValue,
-} from '../../redux/contacts/contactSelectors';
+} from 'redux/contacts/contactSelectors';
 
 const ContactList = () => {
   const contacts = useSelector(getContactValue);

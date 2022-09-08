@@ -9,8 +9,8 @@ import {
   ContactField,
 } from './ContactFormStyled';
 import { useSelector, useDispatch } from 'react-redux';
-import { getContactValue } from '../../redux/contacts/contactSelectors';
-import { addNewContacts } from '../../redux/contacts/contactsOperations';
+import { getContactValue } from 'redux/contacts/contactSelectors';
+import { addNewContacts } from 'redux/contacts/contactsOperations';
 import { nanoid } from 'nanoid';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 

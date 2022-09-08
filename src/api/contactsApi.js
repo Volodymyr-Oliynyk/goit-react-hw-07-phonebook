@@ -1,16 +1,22 @@
 import axios from 'axios';
 import { BASE_URL } from 'constants/constants';
 
-axios.defaults.baseURL = BASE_URL;
+const customAxios = axios.create({
+  baseURL: BASE_URL,
+});
 
 export const getContacts = async () => {
-  return await axios.get('/contacts').then(response => response.data);
+  const { data } = await customAxios.get('/contacts');
+  return data;
 };
 
-export const postContact = async contact => {
-  return await axios.post('/contacts', contact).then(response => response.data);
+export const addContact = async contact => {
+  const { data } = await customAxios.post('/contacts', contact);
+  return data;
 };
 
-export const fetchDeleteContact = async id => {
-  return await axios.delete(`/contacts/${id}`).then(() => id);
+export const deleteContact = async id => {
+  const { data } = await customAxios.delete(`/contacts/${id}`);
+  return data;
+
 };
